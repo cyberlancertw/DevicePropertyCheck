@@ -62,9 +62,9 @@ function WindowDeviceOrientation(event){
         document.getElementById('trDeviceOrientationEventGamma').className = 'hidden';
         return;
     }
-    document.getElementById('deviceOrientationEventAlpha').textContent = event.alpha;
-    document.getElementById('deviceOrientationEventBeta').textContent = event.beta;
-    document.getElementById('deviceOrientationEventGamma').textContent = event.gamma;
+    document.getElementById('deviceOrientationEventAlpha').textContent = getValue(event.alpha);
+    document.getElementById('deviceOrientationEventBeta').textContent = getValue(event.beta);
+    document.getElementById('deviceOrientationEventGamma').textContent = getValue(event.gamma);
 }
 
 /**
@@ -72,15 +72,15 @@ function WindowDeviceOrientation(event){
  */
 function Refresh(){
     document.getElementById('navigatorUserAgent').textContent = window.navigator.userAgent;
-    if (window.orientation){
-        document.getElementById('windowOrientation').textContent = window.orientation;
+    if (window.orientation !== undefined){
+        document.getElementById('windowOrientation').textContent = getValue(window.orientation);
         document.getElementById('trWindowOrientation').className = '';
     }
     else{
         document.getElementById('trWindowOrientation').className = 'hidden';
     }
     if (window.screen.orientation){
-        document.getElementById('screenOrientationType').textContent = window.screen.orientation.type;
+        document.getElementById('screenOrientationType').textContent = getValue(window.screen.orientation.type);
     }
     document.getElementById('windowMatchMediaPortrait').textContent = (window.matchMedia('(orientation: portrait)').matches) ? 'true' : 'false';
     document.getElementById('windowMatchMediaLandscape').textContent = (window.matchMedia('(orientation: landscape)').matches) ? 'true' : 'false';
@@ -97,4 +97,22 @@ function Refresh(){
     document.getElementById('screenColorDepth').textContent = window.screen.colorDepth;
     document.getElementById('screenPixelDepth').textContent = window.screen.pixelDepth;
     document.getElementById('windowDevicePixelRatio').textContent = window.devicePixelRatio;
+}
+
+/**
+ * 取得字串結果
+ * @param {any} value 值
+ * @returns 字串結果
+ */
+function getValue(value){
+    if (value === undefined) return 'undefined';
+    if (value === null) return 'null';
+    if (typeof value === 'number') return value.toString();
+    if (typeof value === 'string'){
+        if (value.length === 0){
+            return 'empty string';
+        }
+        return value;
+    }
+    return `?(${(typeof value)})`;
 }
