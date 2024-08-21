@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="List of properties of your device viewing this page">
+    <title>Check properties of device</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div id="divContainer">
+        <table id="tableFire">
+            <tbody>
+                <tr class="fire"><td>navigator.userAgent</td><td id="navigatorUserAgent"></td></tr>
+                <tr id="fireScreenOrientationChange" class="fired"><td colspan="2">screen.orientation.change()</td></tr>
+                <tr id="fireWindowResize"><td colspan="2">window.resize()</td></tr>
+            </tbody>
+        </table>
+        <table id="tableOrientation">
+            <thead>
+                <tr>
+                    <td>key</td>
+                    <td>value</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>window.matchMedia('(orientation: portrait)').matches</td>
+                    <td id="windowMatchMediaPortrait"></td>
+                </tr>
+                <tr>
+                    <td>screen.orientation.type</td>
+                    <td id="screenOrientationType"></td>
+                </tr>
+                <tr>
+                    <td>window.matchMedia('(orientation: landscape)').matches</td>
+                    <td id="windowMatchMediaLandscape"></td>
+                </tr>
+                <tr id="trDeviceOrientationEventAlpha">
+                    <td>DeviceOrientationEvent.alpha</td>
+                    <td id="deviceOrientationEventAlpha"></td>
+                </tr>
+                <tr id="trDeviceOrientationEventBeta">
+                    <td>DeviceOrientationEvent.beta</td>
+                    <td id="deviceOrientationEventBeta"></td>
+                </tr>
+                <tr id="trDeviceOrientationEventGamma">
+                    <td>DeviceOrientationEvent.gamma</td>
+                    <td id="deviceOrientationEventGamma"></td>
+                </tr>
+                <tr id="trWindowOrientation">
+                    <td><span class="deprecated">window.orientation</span></td>
+                    <td id="windowOrientation"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="tableProperty">
+            <thead>
+                <tr>
+                    <td>key</td>
+                    <td>value</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>screen.width</td>
+                    <td id="screenWidth"></td>
+                </tr>
+                <tr>
+                    <td>screen.height</td>
+                    <td id="screenHeight"></td>
+                </tr>
+                <tr>
+                    <td>screen.availWidth</td>
+                    <td id="screenAvailWidth"></td>
+                </tr>
+                <tr>
+                    <td>screen.availHeight</td>
+                    <td id="screenAvailHeight"></td>
+                </tr>
+                <tr>
+                    <td>window.innerWidth</td>
+                    <td id="windowInnerWidth"></td>
+                </tr>
+                <tr>
+                    <td>window.innerHeight</td>
+                    <td id="windowInnerHeight"></td>
+                </tr>
+                <tr>
+                    <td>window.outerWidth</td>
+                    <td id="windowOuterWidth"></td>
+                </tr>
+                <tr>
+                    <td>window.outerHeight</td>
+                    <td id="windowOuterHeight"></td>
+                </tr>
+                <tr>
+                    <td>document.documentElement.clientWidth</td>
+                    <td id="documentClientWidth"></td>
+                </tr>
+                <tr>
+                    <td>document.documentElement.clientHeight</td>
+                    <td id="documentClientHeight"></td>
+                </tr>
+                <tr>
+                    <td>screen.colorDepth</td>
+                    <td id="screenColorDepth"></td>
+                </tr>
+                <tr>
+                    <td>screen.pixelDepth</td>
+                    <td id="screenPixelDepth"></td>
+                </tr>
+                <tr>
+                    <td>window.devicePixelRatio</td>
+                    <td id="windowDevicePixelRatio"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="./function.js"></script>
+</body>
+</html>

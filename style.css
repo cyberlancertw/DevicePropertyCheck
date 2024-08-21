@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+}
+
+#divContainer{
+    width: 100vw;
+    height: 100vh;
+}
+
+#tableFire > tbody > tr:not(.fire){
+    animation-name: trigger;
+    animation-duration: 2s;
+    background-color: #ffffff;
+    color: #a0a0a0;
+}
+
+#tableFire > tbody > tr.fire{
+    background-color: #8bd5ff;
+    color: #000000;
+}
+
+@keyframes trigger{
+    from{
+        background-color: #8bd5ff;
+        color: #000000;
+    }
+    to{
+        background-color: #ffffff;
+        color: #a0a0a0;
+    }
+}
+
+#tableOrientation > thead > tr > td {
+    font-weight: 900;
+    background-color: #ffeb82;
+}
+
+#tableOrientation > tbody > tr:nth-child(even){
+    background-color: #ffffe2;
+}
+
+#tableProperty > thead > tr > td {
+    font-weight: 900;
+    background-color: #eecfd1;
+}
+
+#tableProperty > thead > tr > td:last-child, #tableProperty > tbody > tr > td:last-child{
+    text-align: right;
+}
+
+#tableProperty > tbody > tr:nth-child(even){
+    background-color: #ffeff1;
+}
+
+table tr {
+    line-height: 1.5;
+}
+
+table{
+    width: 100%;
+}
+
+table td, table th{
+    padding: 0.3rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.deprecated{
+    text-decoration: line-through;
+}
