@@ -62,8 +62,11 @@ function WindowDeviceOrientation(event){
         document.getElementById('trDeviceOrientationEventGamma').className = 'hidden';
         return;
     }
+    document.getElementById('trDeviceOrientationEventAlpha').className = '';
     document.getElementById('deviceOrientationEventAlpha').textContent = getValue(event.alpha);
+    document.getElementById('trDeviceOrientationEventBeta').className = '';
     document.getElementById('deviceOrientationEventBeta').textContent = getValue(event.beta);
+    document.getElementById('trDeviceOrientationEventGamma').className = '';
     document.getElementById('deviceOrientationEventGamma').textContent = getValue(event.gamma);
 }
 
@@ -79,8 +82,11 @@ function Refresh(){
     else{
         document.getElementById('trWindowOrientation').className = 'hidden';
     }
-    if (window.screen.orientation){
+    if (window.screen.orientation && window.screen.orientation.type){
         document.getElementById('screenOrientationType').textContent = getValue(window.screen.orientation.type);
+    }
+    else{
+        document.getElementById('screenOrientationType').textContent = 'not supported';
     }
     document.getElementById('windowMatchMediaPortrait').textContent = (window.matchMedia('(orientation: portrait)').matches) ? 'true' : 'false';
     document.getElementById('windowMatchMediaLandscape').textContent = (window.matchMedia('(orientation: landscape)').matches) ? 'true' : 'false';
