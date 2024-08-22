@@ -12,8 +12,10 @@
         <table id="tableFire">
             <tbody>
                 <tr class="fire"><td>navigator.userAgent</td><td id="navigatorUserAgent"></td></tr>
-                <tr id="fireScreenOrientationChange" class="fired"><td colspan="2">screen.orientation.change()</td></tr>
-                <tr id="fireWindowResize"><td colspan="2">window.resize()</td></tr>
+                <tr id="fireScreenOrientationChange"><td colspan="2">Screen API: orientationchange event</td></tr>
+                <tr id="fireWindowOrientationChange"><td colspan="2"><span class="deprecated">Window API: orientationchange event</span></td></tr>
+                <tr id="fireWindowResize"><td colspan="2">Window API: resize event</td></tr>
+                <tr id="fireWindowDeviceOrientation"><td colspan="2">Window API: deviceorientation event</td></tr>
             </tbody>
         </table>
         <table id="tableOrientation">
@@ -36,15 +38,15 @@
                     <td>window.matchMedia('(orientation: landscape)').matches</td>
                     <td id="windowMatchMediaLandscape"></td>
                 </tr>
-                <tr id="trDeviceOrientationEventAlpha" class="hidden">
+                <tr id="trDeviceOrientationEventAlpha">
                     <td>DeviceOrientationEvent.alpha</td>
                     <td id="deviceOrientationEventAlpha"></td>
                 </tr>
-                <tr id="trDeviceOrientationEventBeta" class="hidden">
+                <tr id="trDeviceOrientationEventBeta">
                     <td>DeviceOrientationEvent.beta</td>
                     <td id="deviceOrientationEventBeta"></td>
                 </tr>
-                <tr id="trDeviceOrientationEventGamma" class="hidden">
+                <tr id="trDeviceOrientationEventGamma">
                     <td>DeviceOrientationEvent.gamma</td>
                     <td id="deviceOrientationEventGamma"></td>
                 </tr>
